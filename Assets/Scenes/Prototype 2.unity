@@ -152,8 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ed8f612f23bb242a15945ab558aa92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 5507718084213213356, guid: 12857a9de19ec1646a46995a595768b8,
-    type: 3}
+  animalPrefabs:
+  - {fileID: 5507718084213213356, guid: 12857a9de19ec1646a46995a595768b8, type: 3}
+  - {fileID: 7364018785953113247, guid: e39afd34f9041ad4594f591e8eb94973, type: 3}
+  - {fileID: 1646395651180309052, guid: bf6f65e85c126e04cb0e0a515db0db67, type: 3}
+  - {fileID: 7848107648113378405, guid: 46d3d4fb7666fb74bbc5a175d187bcde, type: 3}
   spawnPosition: {x: 0, y: 0, z: 25}
 --- !u!4 &9889644
 Transform:
