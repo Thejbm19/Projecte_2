@@ -22,6 +22,7 @@ public class DestroyOutOfBounds : MonoBehaviour
         if (transform.position.z < lowerLim)
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
         }
     }
 }

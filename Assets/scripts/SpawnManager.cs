@@ -6,33 +6,31 @@ using Random = UnityEngine.Random;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] animalPrefabs;
-    public Vector3 spawnPosition = new Vector3(0, 0, 25);
-
+    private Vector3 spawnPosition;
     private float xRange = 15f;
+    private float spawnZ = 25f;
+    private float startTime = 2f;
+    private float repeatRate = 1.5f;
+    private float randomX;
+    private int randomIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnAnimal", 2, 1.5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
+        //cuanta estona tarda a repetir sa instanciacio
+        InvokeRepeating("SpawnAnimal", startTime, repeatRate);
     }
 
 
     public Vector3 RandomSpawnPosition()
     {
-        float randomX = Random.Range(-xRange, xRange);
-        return new Vector3(randomX, 0, 25);
+        randomX = Random.Range(-xRange, xRange);
+        return new Vector3(randomX, 0, spawnZ);
     }
     
     public void SpawnAnimal()
     {
-       int randomIndex = Random.Range(0, animalPrefabs.Length);
+        randomIndex = Random.Range(0, animalPrefabs.Length);
        spawnPosition = RandomSpawnPosition();
        Instantiate(animalPrefabs[randomIndex], spawnPosition, animalPrefabs[randomIndex].transform.rotation);
     }

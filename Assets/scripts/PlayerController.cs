@@ -7,20 +7,15 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10f;
     private float horizontalInput;
-    public float xRange = 16;
-    public float xRAnge = -16;
+    private float xRange = 16;
+    private float xRAnge = -16;
+    
     public GameObject projectilePrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
+  
     void Update()
     {
-
+        // Movimiento horizontal de player
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
 
